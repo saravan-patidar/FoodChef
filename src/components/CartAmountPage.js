@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { clearCart } from "../utils/cartSlice";
+import { clearCart } from "../utils/cardSlice";
 
 const CartAmountPage = ({ totalData }) => {
   const dispatch = useDispatch();

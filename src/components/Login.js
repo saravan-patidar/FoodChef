@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { useDispatch } from "react-redux";
 import { changeName } from "../utils/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const validationSchema = yup.object({
   email: yup.string().email("Invalid Email").required("Required"),
@@ -12,12 +13,14 @@ const validationSchema = yup.object({
 });
 
 const Login = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const formik = useFormik({
     initialValues: { email: "", password: "" },
     validationSchema,
     onSubmit: (value, resetForm) => {
       dispatch(changeName(value.email.split("@")[0]));
+      navigate("/");
       resetForm.resetForm();
     },
   });
@@ -25,9 +28,9 @@ const Login = () => {
     ({ values, handleChange, handleBlur, handleSubmit, touched, errors } =
       formik),
     (
-      <div className="h-[80vh] flex justify-center items-center">
-        <div className="mt-24 my-5  w-2/6 bg-orange-300  shadow-xl m-auto border">
-          <h2 className="font-bold text-center text-xl p-3 bg-slate-700 text-white  ">
+      <div className="h-[80vh] flex justify-center items-center ">
+        <div className="mt-24 my-5  w-2/6 bg-orange-300  shadow-xl shadow-slate-200 m-auto border rounded-xl">
+          <h2 className="font-bold text-center text-xl p-3 bg-slate-700 text-white  rounded-t-xl ">
             LOGIN
           </h2>
           <form className="p-7 text-center" onSubmit={handleSubmit}>

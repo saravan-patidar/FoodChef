@@ -9,36 +9,45 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
   const navigate = useNavigate();
   const [login, setLogin] = useState(false);
-  const items = useSelector((store) => store.cart.totalCount);
+  const items = useSelector((store) => store.cart.totalItemCount);
+
   const userName = useSelector((store) => store.user.userName);
 
   return (
     <div className="flex z-10 justify-between items-center p-1  px-16 bg-[#6474e5] h-20 fixed left-0 right-0 top-0">
-      <img src={foodLogo} alt="logo" className="w-24 h-20 rounded-full" />
+      <Link to="/">
+        <img src={foodLogo} alt="logo" className="w-24 h-20 rounded-full" />
+      </Link>
       <p className="text-orange-500 font-bold">{userName}</p>
       <p className="font-bold bg-gray-300 p-1 rounded-xl ">
         {!onlineStatus ? "Offline: 🔴" : "Online: 🟢"}
       </p>
       <ul className="flex justify-center items-center text-white font-bold gap-3 uppercase ">
-        <li className="text-xl p-1 px-2 cursor-pointer hover:bg-pink_light rounded-lg duration-700 transition-all ease-in-out">
-          <Link to="/">Home</Link>
-        </li>
-        <li className="text-xl p-1 px-2 cursor-pointer hover:bg-pink_light rounded-lg duration-700 transition-all ease-in-out">
-          <Link to="/about">About</Link>
-        </li>
-        <li className="text-xl p-1 px-2 cursor-pointer hover:bg-pink_light rounded-lg duration-700 transition-all ease-in-out">
-          <Lnik to="/help">Help</Lnik>
-        </li>
-        <li className="text-xl p-1 px-2 cursor-pointer hover:bg-pink_light rounded-lg duration-700 transition-all ease-in-out">
-          <Link to="/cart">
+        <Link to="/">
+          <li className="text-xl p-1 px-2 cursor-pointer hover:bg-pink_light rounded-lg duration-700 transition-all ease-in-out">
+            Home
+          </li>
+        </Link>
+        <Link to="/about">
+          <li className="text-xl p-1 px-2 cursor-pointer hover:bg-pink_light rounded-lg duration-700 transition-all ease-in-out">
+            About
+          </li>
+        </Link>
+        <Link to="/help">
+          <li className="text-xl p-1 px-2 cursor-pointer hover:bg-pink_light rounded-lg duration-700 transition-all ease-in-out">
+            help
+          </li>
+        </Link>
+        <Link to="/cart">
+          <li className="text-xl p-1 px-2 cursor-pointer hover:bg-pink_light rounded-lg duration-700 transition-all ease-in-out">
             <div className="relative">
               <img src={shopCart} className="w-10 " />
-              <div className="absolute -right-2 -top-2 bg-black px-1 rounded-full">
+              <div className="absolute right-0 -top-1 text-sm bg-black px-1 rounded-full">
                 {items ? items : null}
               </div>
             </div>
-          </Link>
-        </li>
+          </li>
+        </Link>
         {login ? (
           <button
             className="p-1 bg-red-500 rounded-md hover:bg-red-400"

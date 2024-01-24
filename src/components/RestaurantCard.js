@@ -33,7 +33,7 @@ export default RestaurantCard;
 export const withHighRatedLabel = (RestaurantCard) => {
   return ({ resData }) => (
     <div className="relative">
-      <label className="absolute top-3 left-2 bg-green-400 px-2 text-sm font-bold rounded-b">
+      <label className="absolute top-0 left-2 bg-green-400 px-2 text-sm font-bold rounded-b">
         HIGH RATED
       </label>
       <RestaurantCard resData={resData} />

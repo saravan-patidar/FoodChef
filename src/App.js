@@ -6,8 +6,8 @@ import { Provider } from "react-redux";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About";
-import RestaurantsMenu from "./components/RestaurantsMenu";
-import Cart from "./components/Cart";
+// import RestaurantsMenu from "./components/RestaurantsMenu";
+// import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 import Help from "./components/Help";
 import Error from "./components/Error";
@@ -21,16 +21,17 @@ import Shimmer from "./components/Shimmer";
 const AppLayout = () => {
   return (
     <>
-      <Provider store={appStore}>
-        <Header />
-        <Outlet />
-        <Footer />
-      </Provider>
+      {/* <Provider store={appStore}> */}
+      <Header />
+      <Outlet />
+      <Footer />
+      {/* </Provider> */}
     </>
   );
 };
 
 const RestaurantsMenu = lazy(() => import("./components/RestaurantsMenu"));
+const Cart = lazy(() => import("./components/Cart"));
 
 const appRouter = createBrowserRouter([
   {
@@ -51,7 +52,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Cart />,
+        element: (
+          <Suspense fallback={<h1 className="m-auto">Loading....</h1>}>
+            <Cart />
+          </Suspense>
+        ),
       },
       {
         path: "/order",
@@ -65,14 +70,18 @@ const appRouter = createBrowserRouter([
         path: "/help",
         element: <Help />,
       },
-      {
-        path: "/login",
-        element: <Login />,
-      },
     ],
     errorElement: <Error />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter} />);
+root.render(
+  <Provider store={appStore}>
+    <RouterProvider router={appRouter} />
+  </Provider>
+);

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { clearCart } from "../utils/cardSlice";
-import cartImg from "../images/empty-card.jpg";
+import cartImg from "../images/empty-cart.jpg";
 import CartAmountPage from "./CartAmountPage";
 import CartItemList from "./CartItemList";
 
@@ -15,14 +15,14 @@ const Cart = () => {
   };
 
   return (
-    <div className="text-center p-3 h-screen mt-20">
+    <div className="text-center p-3  mt-20">
       {!items.length ? (
         <div className="w-3/5 m-auto p-2 ">
-          <img src={cartImg} className="w-2/4 h-2/4 m-auto " />
+          <img src={cartImg} className="w-3/4 h-3/4 m-auto " />
           <h3 className="m-5">Your Cart is Empty </h3>
           <Link
             to="/"
-            className="bg-orange-500 px-2 p-2 font-bold rounded-md hover:bg-orange-700"
+            className="bg-pink_light px-2 p-2 font-bold rounded-md hover:bg-rose-400"
           >
             Click here to go back to restaurants
           </Link>

@@ -20,18 +20,21 @@ const Body = () => {
       const filterData = resList.filter((item) =>
         item?.info?.name.toLowerCase().includes(search.toLowerCase())
       );
-      console.log(filterData);
       setFilterRestro(filterData);
       setSearch("");
 
-      if (search.length === 0) return setResNotFound("Restaurants not found !");
+      if (filterData.length === 0) {
+        return setResNotFound("Restaurants not found !");
+      } else {
+        setResNotFound(null);
+      }
     } else {
       setFilterRestro(resList);
       setResNotFound(null);
       setSearch("");
     }
   };
-  console.log(resList);
+
   return (
     <div className="bg-gray-200 mt-20">
       <div className="flex p-4 justify-center items-center gap-2">
@@ -83,7 +86,6 @@ const Body = () => {
           <Shimmer />
         ) : (
           <div className="flex justify-center flex-wrap w-10/12 gap-4 m-auto py-9">
-            {console.log(resNotFound)}
             {resNotFound != null ? (
               <div className="h-[60vh] ">
                 <p className="capitalize text-red-600 font-extrabold text-lg p-3 m-3">

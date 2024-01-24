@@ -1,15 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
 import { ITEM_IMG_URL } from "../utils/constants";
-import { addItems, removeItems } from "../utils/cardSlice";
+import { addItems, removeItems, decreaseItems } from "../utils/cardSlice";
 
 const ItemListCard = ({ itemCards }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((store) => store.cart.items);
 
   const getItemCount = (id) => {
-    const cartItem = cartItems.filter((item) => item?.card?.info?.id === id);
-    return cartItem ? cartItem.quantity : "ADD";
+    const currItem = cartItems.filter((item) => item.card.info.id === id);
+    return currItem[0] ? currItem[0].quantity : "ADD";
   };
+
   const handleAddItems = (item) => {
     dispatch(addItems(item));
   };
@@ -18,7 +19,6 @@ const ItemListCard = ({ itemCards }) => {
     <>
       {itemCards.map((item) => {
         const { name, id, description, imageId, price } = item?.card?.info;
-        console.log(name);
         return (
           <div
             key={id}
