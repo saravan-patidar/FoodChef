@@ -21,11 +21,9 @@ import Shimmer from "./components/Shimmer";
 const AppLayout = () => {
   return (
     <>
-      {/* <Provider store={appStore}> */}
       <Header />
       <Outlet />
       <Footer />
-      {/* </Provider> */}
     </>
   );
 };
