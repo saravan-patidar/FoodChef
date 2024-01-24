@@ -27,6 +27,7 @@ const Login = () => {
   return (
     ({ values, handleChange, handleBlur, handleSubmit, touched, errors } =
       formik),
+    console.log(values),
     (
       <div className="h-[80vh] flex justify-center items-center ">
         <div className="mt-24 my-5  w-2/6 bg-orange-300  shadow-xl shadow-slate-200 m-auto border rounded-xl">
