@@ -21,9 +21,11 @@ import Shimmer from "./components/Shimmer";
 const AppLayout = () => {
   return (
     <>
-      <Header />
-      <Outlet />
-      <Footer />
+      <Provider store={appStore}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </Provider>
     </>
   );
 };
@@ -35,6 +37,7 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
@@ -68,18 +71,17 @@ const appRouter = createBrowserRouter([
         path: "/help",
         element: <Help />,
       },
+      {
+        path: "/login",
+        element: <Login />,
+      },
     ],
-    errorElement: <Error />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
   },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider store={appStore}>
-    <RouterProvider router={appRouter} />
-  </Provider>
+  // <Provider store={appStore}>
+  <RouterProvider router={appRouter} />
+  // </Provider>
 );
