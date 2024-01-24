@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 import useRestaurants from "../utils/useResaurants";
 import Shimmer from "./Shimmer";
 import RestaurantCard from "./RestaurantCard";
@@ -89,11 +91,15 @@ const Body = () => {
                 </p>
               </div>
             ) : (
-              (filterRestro.length === 0 ? resList : filterRestro).map((list) =>
-                list.info.avgRating >= 4.4 ? (
-                  <TopRatedRestaurants resData={list} />
-                ) : (
-                  <RestaurantCard resData={list} />
+              (filterRestro.length === 0 ? resList : filterRestro).map(
+                (list) => (
+                  <Link to={"/restaurants/" + list.info.id} key={list.info.id}>
+                    {list.info.avgRating >= 4.4 ? (
+                      <TopRatedRestaurants resData={list} />
+                    ) : (
+                      <RestaurantCard resData={list} />
+                    )}
+                  </Link>
                 )
               )
             )}
