@@ -18,17 +18,16 @@ const Login = () => {
   const formik = useFormik({
     initialValues: { email: "", password: "" },
     validationSchema,
-    onSubmit: (value, resetForm) => {
-      dispatch(changeName(value.email.split("@")[0]));
+    onSubmit: (values, resetForm) => {
+      dispatch(changeName(values.email.split("@")[0]));
       navigate("/");
       resetForm.resetForm();
     },
   });
   return (
-    ({ values, handleChange, handleBlur, handleSubmit, touched, errors } =
-      formik),
-    console.log(values),
+    ({ handleChange, handleBlur, handleSubmit, touched, errors } = formik),
     (
+      // console.log(formik.values),
       <div className="h-[80vh] flex justify-center items-center ">
         <div className="mt-24 my-5  w-2/6 bg-orange-300  shadow-xl shadow-slate-200 m-auto border rounded-xl">
           <h2 className="font-bold text-center text-xl p-3 bg-slate-700 text-white  rounded-t-xl ">
@@ -47,7 +46,7 @@ const Login = () => {
                 autoComplete="off"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.email}
+                value={formik.values.email}
               />
               {errors.email && touched.email ? (
                 <div className="text-red-500 font-bold text-center">
@@ -66,7 +65,7 @@ const Login = () => {
                 id="password"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.password}
+                value={formik.values.password}
               />
               {errors.password && touched.password ? (
                 <div className="text-red-500 font-bold text-center ">
