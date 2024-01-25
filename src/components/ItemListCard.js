@@ -38,7 +38,7 @@ const ItemListCard = ({ itemCards }) => {
                   alt="images"
                 />
               )}
-              <div className="absolute rounded-md -translate-x-1/2 left-1/2 bottom-10 bg-slate-300 p-1">
+              <div className="absolute rounded-md md:-translate-x-1/2 md:left-1/2 md:bottom-10 right-0 left-0 bottom-0 text-center bg-slate-300 p-1">
                 <button
                   className=" text-red-600 font-bold cursor-pointer text-lg px-1"
                   onClick={() =>
@@ -49,7 +49,7 @@ const ItemListCard = ({ itemCards }) => {
                 >
                   -
                 </button>
-                <span className="px-2">{getItemCount(id)}</span>
+                <span className="px-1">{getItemCount(id)}</span>
                 <button
                   onClick={() => handleAddItems(item)}
                   className=" text-green-600 font-bold cursor-pointer text-lg px-1"

@@ -26,10 +26,8 @@ const Login = () => {
   });
   const { handleChange, handleBlur, handleSubmit, touched, errors } = formik;
   return (
-    // ({ handleChange, handleBlur, handleSubmit, touched, errors } = formik),
-    // console.log(formik.values),
     <div className="h-[80vh] flex justify-center items-center ">
-      <div className="mt-24 my-5  w-2/6 bg-orange-300  shadow-xl shadow-slate-200 m-auto border rounded-xl">
+      <div className="mt-24 my-5  md:w-2/6 bg-orange-300  shadow-xl shadow-slate-200 m-auto border rounded-xl">
         <h2 className="font-bold text-center text-xl p-3 bg-slate-700 text-white  rounded-t-xl ">
           LOGIN
         </h2>

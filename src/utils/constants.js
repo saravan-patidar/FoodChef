@@ -11,6 +11,8 @@ export const MENU_CARD_URL =
 
 export const CARD_ID =
   "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
+export const RESTAURANT_ID =
+  "type.googleapis.com/swiggy.presentation.food.v2.Restaurant";
 
 export const GITHUB_URL = "https://github.com/saravan-patidar/REACT_LEARN_NR";
 export const LINKDIN_URL = "https://linkedin.com/in/saravan-patidar-766307233";

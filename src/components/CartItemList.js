@@ -9,7 +9,7 @@ const CartItemList = ({ data }) => {
   const { name, price, imageId, id } = data?.card?.info;
 
   return (
-    <div className="flex justify-around items-center p-2 m-auto my-2 w-4/6 h-28 shadow-md bg-slate-100 rounded-xl">
+    <div className="flex justify-around items-center p-2 m-auto my-2 md:w-4/6 h-28 shadow-md bg-slate-100 rounded-xl">
       <div className="h-full ">
         {!imageId ? null : (
           <img

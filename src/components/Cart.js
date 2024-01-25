@@ -28,8 +28,8 @@ const Cart = () => {
           </Link>
         </div>
       ) : (
-        <div className="flex justify-around items-start mt-2 ">
-          <div className="w-7/12  bg-gray-300 p-1 shadow-xl">
+        <div className="sm:flex justify-around items-start mt-2 ">
+          <div className="sm:w-7/12  bg-gray-300 p-1 shadow-xl">
             <div className="flex justify-between items-center ">
               <h1 className="font-bold p-2 text-lg ">
                 Your Cart Items ({totalItemCount})
@@ -50,7 +50,7 @@ const Cart = () => {
               })}
             </div>
           </div>
-          <div className="w-4/12 bg-zinc-100 p-3 shadow-2xl">
+          <div className="sm:w-4/12 bg-zinc-100 p-3 shadow-2xl">
             <CartAmountPage totalData={totalData} />
           </div>
         </div>

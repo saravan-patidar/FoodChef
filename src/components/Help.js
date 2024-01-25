@@ -3,7 +3,7 @@ import { FAQ } from "../utils/constants";
 
 const Section = ({ id, title, description, show, setVisible }) => {
   return (
-    <div key={id} className="items-center bg-gray-200 w-8/12 m-auto">
+    <div key={id} className="items-center bg-gray-200 md:w-8/12 m-auto">
       <div
         className="flex justify-between  cursor-pointer my-2 p-3"
         onClick={() => (show ? setVisible(false) : setVisible(true))}
@@ -21,7 +21,7 @@ const Help = () => {
   return (
     <div className="m-4 pt-20">
       <div
-        className=" bg-slate-900 w-8/12 m-auto p-3 text-white font-extrabold
+        className=" bg-slate-900 md:w-8/12 m-auto p-3 text-white font-extrabold
        text-center text-2xl"
       >
         FAQ

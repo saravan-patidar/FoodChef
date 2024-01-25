@@ -37,10 +37,10 @@ const Body = () => {
 
   return (
     <div className="bg-gray-200 mt-20">
-      <div className="flex p-4 justify-center items-center gap-2">
-        <div>
+      <div className=" sm:flex p-4 justify-center items-center sm:gap-2 m-auto">
+        <div className="mb-3 w-fit m-auto md:mb-0 md:m-0">
           <label
-            className="p-2 bg-blue_color rounded-xl text-white shadow shadow-blue_color hover:bg-blue-400 border"
+            className="p-2 bg-blue_color rounded-xl text-white shadow shadow-blue_color hover:bg-blue-400 border "
             htmlFor="check"
           >
             High Rated
@@ -65,9 +65,9 @@ const Body = () => {
             }}
           />
         </div>
-        <div>
+        <div className=" w-fit m-auto md:m-0">
           <input
-            className="p-2 rounded-s-full w-80 shadow shadow-blue_color hover:blue_color border-none outline-none"
+            className="p-2 rounded-s-full w-auto shadow shadow-blue_color hover:blue_color border-none outline-none sm:w-80"
             type="text"
             value={search}
             placeholder="what do you want"
@@ -85,7 +85,7 @@ const Body = () => {
         {resList.length === 0 ? (
           <Shimmer />
         ) : (
-          <div className="flex justify-center flex-wrap w-10/12 gap-4 m-auto py-9">
+          <div className="flex justify-center flex-wrap w-10/12 gap-4 m-auto py-5">
             {resNotFound != null ? (
               <div className="h-[60vh] ">
                 <p className="capitalize text-red-600 font-extrabold text-lg p-3 m-3">
