@@ -1,6 +1,6 @@
 # FoodChef - React Food Ordering App! 🚀
 
-    [FoodChef->click_here](https://main--foodeatenchef.netlify.app/)
+[FoodChef](https://main--foodeatenchef.netlify.app/)
     
     Welcome to FoodChef, a React-based food ordering web application inspired by popular platforms like Swiggy.
     This project is a demonstration of my skills in React development, showcasing a user-friendly interface, 
@@ -40,7 +40,7 @@
     
     ```
 ### USage 
-- Visit [FoodChef](https://main--foodeatenchef.netlify.app/)) to explore the FoodChef application.
+- Visit [FoodChef](https://main--foodeatenchef.netlify.app/) to explore the FoodChef application.
 
 - Use the search box to find restaurants, add items to your cart, and enjoy a seamless food ordering experience.
 
