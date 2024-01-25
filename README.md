@@ -1,6 +1,8 @@
 # FoodChef - React Food Ordering App! 🚀
 
-    Welcome to FoodChef, a React-based food ordering web application inspired by popular platforms like Swiggy. This project is a demonstration of my skills in React development, showcasing a user-friendly interface, real-time data updates, and efficient state management.
+    Welcome to FoodChef, a React-based food ordering web application inspired by popular platforms like Swiggy.
+    This project is a demonstration of my skills in React development, showcasing a user-friendly interface, 
+    real-time data updates, and efficient state management.
 
 ### Features 
 
@@ -15,11 +17,13 @@
 ### Installation 
 
 1 Clone the repository:
+
   ```git clone https://github.com/your-username/FoodChef.git```
 
 2 Install dependencies:
+
   ```cd FoodChef
-    npm install
+  ```  npm install
     ```
 
 3 Run the development server:
