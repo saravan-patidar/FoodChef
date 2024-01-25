@@ -18,13 +18,21 @@
 
 1 Clone the repository:
 
-  ```git clone https://github.com/your-username/FoodChef.git ```
+  ```
+  git clone https://github.com/your-username/FoodChef.git
+
+```
 
 2 Install dependencies:
 
-  ```cd FoodChef ```
-  ```  npm install```
+  ```
+  cd FoodChef
+ npm install
+
+```
 
 
 3 Run the development server:
-    ```npm start```
+    ```
+    npm start
+    ```
