@@ -1,0 +1,15 @@
+# FOODCHEF web-app
+- Just launched my React project - a cool food ordering website, similar to Swiggy! 🚀
+- Used live Swiggy API for real-time updates, improving user experience.
+- Created a user-friendly design with Tailwind CSS for a great look and feel.
+- Managed state efficiently with React Hooks for smooth user interactions.
+- Fetched data on initial render using useEffect hook for timely updates.
+- Optimized performance with lazy loading, ensuring fast loading times.
+- Improved code readability using custom hooks for maintainability.
+- Developed the project without create-react-app, opting for the Parcel bundler.
+- Added features like a restaurant search box and a cart for enhanced functionality.
+- Organized and clean code structure for easy understanding.
+- Handled various aspects of React development, showcasing versatility.
+- Used Parcel bundler for efficient code bundling without external tools.
+- Communicated effectively with Swiggy API for real-time data integration.
+- Addressed performance issues through strategic use of lazy loading.
