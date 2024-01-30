@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import useRestaurants from "../utils/useResaurants";
@@ -14,6 +14,12 @@ const Body = () => {
   const [isChecked, setIsChecked] = useState(true);
   const [resNotFound, setResNotFound] = useState(null);
   const TopRatedRestaurants = withHighRatedLabel(RestaurantCard);
+
+  useEffect(() => {
+    if (filterRestro.length === 0) {
+      setFilterRestro(resList);
+    }
+  }, [resList]);
 
   const searchRestaurants = () => {
     if (search !== "") {
@@ -40,7 +46,9 @@ const Body = () => {
       <div className=" sm:flex p-4 justify-center items-center sm:gap-2 m-auto">
         <div className="mb-3 w-fit m-auto md:mb-0 md:m-0">
           <label
-            className="p-2 bg-blue_color rounded-xl text-white shadow shadow-blue_color hover:bg-blue-400 border "
+            className={`p-2  rounded-xl text-white shadow  shadow-blue_color hover:bg-blue-400 border ${
+              !isChecked ? "bg-orange-500" : "bg-blue_color"
+            } `}
             htmlFor="check"
           >
             High Rated
@@ -51,12 +59,12 @@ const Body = () => {
             id="check"
             value={isChecked}
             checked={!isChecked}
-            onChange={(e) => {
+            onChange={() => {
               setIsChecked(!isChecked);
               if (isChecked) {
                 setHighRated(filterRestro);
                 const filterRating = filterRestro.filter(
-                  (item) => item?.info?.avgRating > 4.2
+                  (item) => item?.info?.avgRating > 4.3
                 );
                 setFilterRestro(filterRating);
               } else {
@@ -93,17 +101,15 @@ const Body = () => {
                 </p>
               </div>
             ) : (
-              (filterRestro.length === 0 ? resList : filterRestro).map(
-                (list) => (
-                  <Link to={"/restaurants/" + list.info.id} key={list.info.id}>
-                    {list.info.avgRating >= 4.4 ? (
-                      <TopRatedRestaurants resData={list} />
-                    ) : (
-                      <RestaurantCard resData={list} />
-                    )}
-                  </Link>
-                )
-              )
+              filterRestro.map((list) => (
+                <Link to={"/restaurants/" + list.info.id} key={list.info.id}>
+                  {list.info.avgRating >= 4.4 ? (
+                    <TopRatedRestaurants resData={list} />
+                  ) : (
+                    <RestaurantCard resData={list} />
+                  )}
+                </Link>
+              ))
             )}
           </div>
         )}
